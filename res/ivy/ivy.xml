@@ -32,8 +32,8 @@
     <!-- =========================================================================================================== -->
     <dependencies>
         <dependency org="mucommander"   name="mucommander-commons-file"        rev="latest.integration" conf="runtime->*"/>
-        <dependency org="mucommander"   name="mucommander-commons-collections" rev="latest.integration" conf="runtime->*"/>
-        <dependency org="mucommander"   name="mucommander-commons-conf"        rev="latest.integration" conf="runtime->*"/>
+        <dependency org="mucommander"   name="mucommander-commons-collections" rev="1.0.0-b15" conf="runtime->*"/>
+        <dependency org="mucommander"   name="mucommander-commons-conf"        rev="1.0.0-b28" conf="runtime->*"/>
         <dependency org="jmdns"         name="jmdns"                           rev="latest.integration" conf="runtime->*"/>
         <dependency org="slf4j"         name="slf4j"                           rev="latest.integration" conf="runtime->jul,log4j"/>
         <dependency org="logback"       name="logback"                         rev="latest.integration" conf="runtime->default"/>
@@ -43,7 +43,7 @@
         <dependency org="jdeb"          name="jdeb"                            rev="latest.integration" conf="tools"/>
         <dependency org="proguard"      name="proguard"                        rev="latest.integration" conf="tools"/>
         <dependency org="ant-contrib"   name="ant-contrib"                     rev="latest.integration" conf="tools"/>
-        <dependency org="mucommander"   name="code-metrics" rev="latest.integration" conf="tools"/>
-        <dependency org="mucommander"   name="mucommander-commons-ant"         rev="latest.integration" conf="tools->runtime"/>
+        <dependency org="mucommander"   name="code-metrics"                    rev="1.0.2" conf="tools"/>
+        <dependency org="mucommander"   name="mucommander-commons-ant"         rev="1.0.0-b13" conf="tools->runtime"/>
     </dependencies>
 </ivy-module>

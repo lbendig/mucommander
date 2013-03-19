@@ -30,8 +30,8 @@ import com.mucommander.bookmark.file.BookmarkProtocolProvider;
 import com.mucommander.command.Command;
 import com.mucommander.command.CommandException;
 import com.mucommander.command.CommandManager;
-import com.mucommander.command.CommandType;
 import com.mucommander.commons.file.FileFactory;
+import com.mucommander.commons.file.FileProtocols.CustomLoadableProtocol;
 import com.mucommander.commons.file.icon.impl.SwingFileIconProvider;
 import com.mucommander.commons.file.impl.ftp.FTPProtocolProvider;
 import com.mucommander.commons.file.impl.smb.SMBProtocolProvider;
@@ -133,6 +133,8 @@ public class Launcher {
         // Allows users to tweak how custom commands are loaded / saved.
         System.out.println(" -f FILE, --commands FILE          Load custom commands from FILE.");
 
+        // Allows users to specify a directory from which Hadoop jars are loaded
+        System.out.println(" --hadoop FILE/FOLDER              HDFS Protocol support: location of Hadoop jar(s) : FILE(core-jar) or FOLDER(as of 0.21)");
         // Ignore warnings.
         System.out.println(" -i, --ignore-warnings             Do not fail on warnings (default).");
 
@@ -142,6 +144,9 @@ public class Launcher {
         // Allows users to change the preferences folder.
         System.out.println(" -p FOLDER, --preferences FOLDER   Store configuration files in FOLDER");
 
+        // Allows users to specify a directory from which Quantcast Qfs jar is loaded
+        System.out.println(" --qfs FILE                        QFS Protocol support: location of qfs-access.jar");
+        
         // muCommander will not print verbose error messages.
         System.out.println(" -S, --silent                      Do not print verbose error messages");
 
@@ -254,7 +259,7 @@ public class Launcher {
 
         if(MuConfigurations.getPreferences().getBooleanVariable(useName) && (command = MuConfigurations.getPreferences().getVariable(commandName)) != null) {
             try {
-                CommandManager.registerCommand(new Command(alias, command, CommandType.SYSTEM_COMMAND));}
+                CommandManager.registerCommand(new Command(alias, command, Command.SYSTEM_COMMAND));}
             catch(CommandException e) {
                 // Ignore this: the command didn't work in the first place, we might as well get rid of it.
             }
@@ -387,6 +392,24 @@ public class Launcher {
                         printError("Missing FOLDER parameter to " + args[i], null, true);
                     try {ExtensionManager.setExtensionsFolder(args[++i]);}
                     catch(Exception e) {printError("Could not set extensions folder", e, fatalWarnings);}
+                }
+                
+                //location of Hadoop core jar
+                else if(args[i].equals("--hadoop")) {
+                    if(i >= args.length - 1) {
+                        printError("Missing Hadoop jar location " + args[i], null, true);
+                    }
+                    try {FileFactory.registerCustomClasses(args[++i].trim(), CustomLoadableProtocol.HDFS);}
+                    catch (Exception e) {printError("No HDFS will be supported", e, fatalWarnings);}
+                }
+                
+                //location of qfs-access jar
+                else if(args[i].equals("--qfs")) {
+                    if(i >= args.length - 1) {
+                        printError("Missing Qfs jar location " + args[i], null, true);
+                    }
+                    try {FileFactory.registerCustomClasses(args[++i].trim(), CustomLoadableProtocol.QFS);}
+                    catch (Exception e) {printError("No QFS will be supported", e, fatalWarnings);}
                 }
 
                 // Ignore warnings.

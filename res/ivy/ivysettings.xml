@@ -8,9 +8,8 @@
     <!-- = Configuration =========================================================================================== -->
     <!-- =========================================================================================================== -->
     <property name="repo.uri" value="http://ivy.mucommander.com/"/>
-
-
-
+    <property name="local.repo.dir" value="${ivy.default.ivy.user.dir}/local"/>
+    
     <!-- = muCommander Repository ================================================================================== -->
     <!-- =========================================================================================================== -->
     <resolvers>
@@ -18,6 +17,17 @@
         <ivy      pattern="${repo.uri}/[organisation]/[module]/[revision]/ivy.xml" />
         <artifact pattern="${repo.uri}/[organisation]/[module]/[revision]/[artifact].[ext]" />
       </url>
+      <filesystem name="local-repo" local="true">
+        <ivy pattern="${local.repo.dir}/[organisation]/[module]/[revision]/ivy.xml" />
+        <artifact pattern="${local.repo.dir}/[organisation]/[module]/[revision]/[type]s/[artifact].[ext]" />
+        </filesystem>
+          <chain name="chain">
+            <resolver ref="local-repo"/>
+            <resolver ref="mucommander-ivy"/>
+          </chain>
     </resolvers>
-    <settings defaultResolver="mucommander-ivy"/>
+    <settings defaultResolver="chain"/>
+    <modules>
+      <module organisation="mucommander" name="mucommander-commons-file" resolver="local-repo"/>
+    </modules>
 </ivysettings>
