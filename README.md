@@ -3,8 +3,8 @@
 [muCommander](http://www.mucommander.com) is a lightweight, cross-platform file manager with a dual-pane interface.<br>
 
 ## Motivation
-Forked from [mucommander-svn](https://svn.mucommander.com), this extension** replaces the already existing [Hadoop](http://hadoop.apache.org/) [HDFS]
-(http://hadoop.apache.org/docs/stable/hdfs_user_guide.html) support (which is restricted to version 0.20.0) and also enables<br> 
+Forked from [mucommander-svn](https://svn.mucommander.com), **this extension** replaces the already existing [Hadoop](http://hadoop.apache.org/) [HDFS]
+(http://hadoop.apache.org/docs/stable/hdfs_user_guide.html) support (which only supports 0.20.0) and also enables
 [Quantcast](https://www.quantcast.com/) File System [(QFS)](https://github.com/quantcast/qfs) browsing.<br>
 The patch removes the Hadoop dependency from muCommander's runnable fat JAR, and makes it possible
 to provide an arbitrary Hadoop/QFS version via command line parameters. Loading of the classes are done dynamically during 
