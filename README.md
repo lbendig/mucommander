@@ -62,17 +62,6 @@ Also provide the location of qfs-access.jar via the **--qfs** command line optio
     ...
     --qfs FILE  QFS Protocol support: location of qfs-access.jar
 
-
-## Examples
-
-    java -jar mucommander-xxx.jar --hadoop /home/user/hadoop/hadoop-1.0.0/hadoop-core-1.0.0.jar
-    java -jar mucommander-xxx.jar --hadoop /home/user/hadoop/hadoop-2.0.0-cdh4.1.2
-
-    export LD_LIBRARY_PATH=/home/user/code/qfs/build/release/lib; \
-    java -jar mucommander-xxx.jar --hadoop /home/user/hadoop/hadoop-2.0.0-cdh4.1.2 \
-    --qfs /home/user/qfs/build/java/qfs-access/qfs-access-1.0.1.jar
-
-
 ## Compiling
 
 ### mucommander-common-files
@@ -89,6 +78,15 @@ Also provide the location of qfs-access.jar via the **--qfs** command line optio
     ant jar
 
 The runnable mucommander-xxx.jar  will be created under `mucommander/tmp`
+
+## Examples
+
+    java -jar mucommander-xxx.jar --hadoop /home/user/hadoop/hadoop-1.0.0/hadoop-core-1.0.0.jar
+    java -jar mucommander-xxx.jar --hadoop /home/user/hadoop/hadoop-2.0.0-cdh4.1.2
+
+    export LD_LIBRARY_PATH=/home/user/code/qfs/build/release/lib; \
+    java -jar mucommander-xxx.jar --hadoop /home/user/hadoop/hadoop-2.0.0-cdh4.1.2 \
+    --qfs /home/user/qfs/build/java/qfs-access/qfs-access-1.0.1.jar
 
 
 ## Misc
