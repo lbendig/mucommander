@@ -100,9 +100,21 @@ public class ServerConnectDialog extends FocusDialog implements ActionListener, 
         this.tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 
         addTab(FileProtocols.FTP, new FTPPanel(this, mainFrame), selectPanelClass);
-        addTab(FileProtocols.HDFS, new HDFSPanel(this, mainFrame), selectPanelClass);
+        
+        if (FileFactory.isHDFSDisabled()) {
+            addDisabledTab(FileProtocols.HDFS);
+        }
+        else {
+            addTab(FileProtocols.HDFS, new HDFSPanel(this, mainFrame), selectPanelClass);
+        }
         addTab(FileProtocols.HTTP, new HTTPPanel(this, mainFrame), selectPanelClass);
         addTab(FileProtocols.NFS, new NFSPanel(this, mainFrame), selectPanelClass);
+        if (FileFactory.isQFSDisabled()) {
+            addDisabledTab(FileProtocols.QFS);
+        }
+        else {
+            addTab(FileProtocols.QFS, new QFSPanel(this, mainFrame), selectPanelClass);
+        }
         addTab(FileProtocols.S3, new S3Panel(this, mainFrame), selectPanelClass);
         addTab(FileProtocols.SFTP, new SFTPPanel(this, mainFrame), selectPanelClass);
         addTab(FileProtocols.SMB, new SMBPanel(this, mainFrame), selectPanelClass);
@@ -155,7 +167,14 @@ public class ServerConnectDialog extends FocusDialog implements ActionListener, 
 
         serverPanels.add(serverPanel);
     }
-
+    
+    public void addDisabledTab(String protocol) {
+        JPanel northPanel = new JPanel(new BorderLayout());
+        northPanel.add(new JPanel());
+        northPanel.setEnabled(false);
+        tabbedPane.addTab(protocol.toUpperCase(), northPanel);
+        tabbedPane.setEnabledAt((tabbedPane.getTabCount() - 1), false);
+    }
 
     protected void updateURLLabel() {
         try {
