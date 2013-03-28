@@ -4,3 +4,11 @@
 *.jar
 *.war
 *.ear
+
+#Eclipse specific files#
+.classpath
+.project
+
+#Others#
+reports
+tmp
