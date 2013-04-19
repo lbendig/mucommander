@@ -3058,6 +3058,9 @@ action_categories.windows:CA:Finestres
 action_categories.tabs:EN:Tabs
 # Translation missing (New!)
 
+action_categories.commands:EN:Custom commands
+# Translation missing (New!)
+
 action_categories.misc:EN:$[prefs_dialog.misc_tab]
 
 
@@ -5518,6 +5521,7 @@ OpenInNewTab.label:EN:Open in new tab
 OpenInNewTab.label:UA:Відкрити у новій вкладці
 OpenInNewTab.label:ES:Abrir en pestaña nueva
 OpenInNewTab.label:DE:In neuem Panel öffnen
+OpenInNewTab.label:TR:Yeni sekmede aç
 # Translation missing (New!)
 
 OpenInOtherPanel.label:EN:Open in other panel
@@ -7305,9 +7309,11 @@ ShowRecentExecutedFilesQL.label:ES:Ficheros ejecutados recientemente
 ShowRootFoldersQL.label:EN:Root folders
 ShowRootFoldersQL.label:UA:Кореневі папки
 ShowRootFoldersQL.label:ES:Directorios raíz
+ShowRootFoldersQL.label:TR:Kök dizinler
 # Translation missing (New!)
 
 ShowTabsQL.label:EN:Open tabs
+ShowTabsQL.label:TR:Sekmeleri aç
 # Translation missing (New!)
 
 SplitFile.label:EN:$[split]
@@ -8392,6 +8398,12 @@ table.download_or_browse:CA:Vol explorar o descarregar aquest fitxer?
 # Tabs #
 ########
 
+AddTab.label:EN:Add tab
+# Translation missing (New!)
+
+AddTab.tooltip:EN:Add new tab in the active panel
+# Translation missing (New!)
+
 ToggleLockTab.lock:EN:Lock
 # Translation missing (New!)
 
@@ -8407,10 +8419,11 @@ ToggleLockTab.tooltip:EN:Change tab's locking state
 DuplicateTab.label:EN:Duplicate
 # Translation missing (New!)
 
-DuplicateTab.tooltip:EN:Create similar tab in the same panel
+DuplicateTab.tooltip:EN:Duplicate active tab in the same panel
 # Translation missing (New!)
 
 CloseDuplicateTabs.label:EN:Close duplicates
+CloseDuplicateTabs.label:TR:Benzer sekmeleri kapat
 # Translation missing (New!)
 
 CloseDuplicateTabs.tooltip:EN:Close duplicate tabs
@@ -8419,6 +8432,7 @@ CloseDuplicateTabs.tooltip:ES:Cerrar pestañas duplicadas
 # Translation missing (New!)
 
 CloseOtherTabs.label:EN:Close others
+CloseOtherTabs.label:TR:Diğer sekmeleri kapat
 # Translation missing (New!)
 
 CloseOtherTabs.tooltip:EN:Close other tabs
@@ -8434,6 +8448,7 @@ CloseTab.tooltip:ES:Cerrar pestaña
 # Translation missing (New!)
 
 MoveTabToOtherPanel.label:EN:Move to other panel
+MoveTabToOtherPanel.label:TR:Sekmeyi diğer panele taşı
 # Translation missing (New!)
 
 MoveTabToOtherPanel.tooltip:EN:Move tab to other panel
@@ -8450,6 +8465,7 @@ CloneTabToOtherPanel.tooltip:EN:Add similar tab in the other panel
 NextTab.label:EN:Next tab
 NextTab.label:UA:Наступна вкладка
 NextTab.label:ES:Siguiente pestaña
+NextTab.label:TR:Sonraki sekme
 # Translation missing (New!)
 
 NextTab.tooltip:EN:Switch to the tab on the right
@@ -8458,6 +8474,7 @@ NextTab.tooltip:EN:Switch to the tab on the right
 PreviousTab.label:EN:Previous tab
 PreviousTab.label:UA:Попередня вкладка
 PreviousTab.label:ES:Pestaña anterior
+PreviousTab.label:TR:Önceki sekme
 # Translation missing (New!)
 
 PreviousTab.tooltip:EN:Switch to the tab on the left
@@ -17375,6 +17392,9 @@ theme_could_not_be_loaded:NB:En feil oppstod ved lastingen av dette temaet.
 theme_could_not_be_loaded:TR:Tema yüklenirken bir hata oluştu.
 theme_could_not_be_loaded:CA:S'ha produït un error en carregar aquest tema.
 
+# Error message displayed trying to open cyclic symlink
+cannot_open_cyclic_symlink:EN:Cannot open the selected link because it is cyclic
+# Translation missing (New!)
 
 #################
 # Setup entries #
@@ -18557,9 +18577,11 @@ recent_executed_files_quick_list.empty_message:ES:No hay ficheros ejecutados rec
 # Translation missing (KO)
 
 roots_quick_list.empty_message:EN:No root folders available
+roots_quick_list.empty_message:TR:Kök dizin yok ya da ulaşılamıyor
 # Translation missing (New!)
 
 tabs_quick_list.empty_message:EN:Only one tab is presented
+tabs_quick_list.empty_message:TR:Sadece bir sekme görüntüleniyor
 # Translation missing (New!)
 
 ######################
@@ -18577,6 +18599,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #server_connect_dialog.auth_error:SL:Napačno uporabniško ime ali geslo
 #server_connect_dialog.auth_error:AR:معرف خاطئ أو كلمة مرور خاطئة.
 #server_connect_dialog.auth_error:NB:Ugyldig brukernavn eller passord.
+#server_connect_dialog.auth_error:TR:Hatalı kullanıcı adı ya da şifre.
 
 #move_dialog.cannot_move_to_itself:EN:Cannot move files to a subfolder.
 #move_dialog.cannot_move_to_itself:FR:Impossible de déplacer les fichiers vers un sous-répertoire.
@@ -18587,6 +18610,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #move_dialog.cannot_move_to_itself:SL:Ne morem premakniti datotek v podmapo
 #move_dialog.cannot_move_to_itself:AR:لا يمكن نقل الملفات إلى المجلد الفرعي.
 #move_dialog.cannot_move_to_itself:NB:Kan ikke flytte fil til undermappe.
+#move_dialog.cannot_move_to_itself:TR:Dosyalar alt dizine taşınamıyor.
 
 #pack.error_on_file:EN:Error while compressing %1
 #pack.error_on_file:FR:Erreur lors de la compression de %1
@@ -18601,6 +18625,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #pack.error_on_file:SL:Napaka med stiskanjem %1
 #pack.error_on_file:AR:خطأ أثناء الضغط %1
 #pack.error_on_file:NB:Feil ved komprimering av %1
+#pack.error_on_file:TR:%1 sıkıştırılmasında hata
 
 #pack_dialog.cannot_write:EN:Unable to create file in destination folder.
 #pack_dialog.cannot_write:FR:Impossible de créer le fichier dans le dossier de destination.
@@ -18615,6 +18640,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #pack_dialog.cannot_write:SL:Ne morem ustvariti stisnjene datoteke v ciljni mapi.
 #pack_dialog.cannot_write:AR:لا يمكن إنشاء الملف في المجلد الوجهة.
 #pack_dialog.cannot_write:NB:Kunne ikke opprette fil i målmappe.
+#pack_dialog.cannot_write:TR:Hedef dizinde dosya oluşturulmasında hata.
 
 #unpack.unable_to_open_zip:EN:Unable to open zip file %1.
 #unpack.unable_to_open_zip:FR:Erreur lors de l'ouverture du fichier zip %1.
@@ -18629,6 +18655,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #unpack.unable_to_open_zip:SL:Ne morem odpreti stisnjene datoteke %1.
 #unpack.unable_to_open_zip:AR:يمكن فتح الملف المضغوط %1.
 #unpack.unable_to_open_zip:NB:Kunne ikke åpne zip-fil %1.
+#unpack.unable_to_open_zip:TR:%1 arşiv dosyasının açılmasında hata.
 
 #image_viewer.previous_image:EN:Previous image
 #image_viewer.previous_image:FR:Image précédente
@@ -18639,6 +18666,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #image_viewer.previous_image:SL:Prejšnja slika
 #image_viewer.previous_image:AR:الصورة السابقة
 #image_viewer.previous_image:NB:Forrige bilde
+#image_viewer.previous_image:TR:Önceki görüntü
 
 #image_viewer.next_image:EN:Next image
 #image_viewer.next_image:FR:Image suivante
@@ -18649,6 +18677,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #image_viewer.next_image:SL:Naslednja slika
 #image_viewer.next_image:AR:الصورة التالية
 #image_viewer.next_image:NB:Neste bilde
+#image_viewer.next_image:TR:Sonraki görüntü
 
 #mkdir_dialog.title:EN:Make directory
 #mkdir_dialog.title:FR:Créer répertoire
@@ -18663,6 +18692,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #mkdir_dialog.title:SL:Nova mapa
 #mkdir_dialog.title:AR:إنشاء دليل
 #mkdir_dialog.title:NB:Neste mappe
+#mkdir_dialog.title:TR:Dizin oluştur
 
 #mkdir_dialog.error_title:EN:Creation error
 #mkdir_dialog.error_title:FR:Erreur de création
@@ -18677,6 +18707,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #mkdir_dialog.error_title:SL:Napaka pri ustvarjanju mape
 #mkdir_dialog.error_title:AR:خطأ إنشاء
 #mkdir_dialog.error_title:NB:Feil ved opprettelse
+#mkdir_dialog.error_title:TR:Oluşturma hatası
 
 # Remove bookmark button in the Edit bookmarks dialog
 #edit_bookmarks_dialog.remove:EN:Remove
@@ -18690,6 +18721,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #edit_bookmarks_dialog.remove:SL:Odstrani
 #edit_bookmarks_dialog.remove:AR:حذف
 #edit_bookmarks_dialog.remove:NB:Fjern
+#edit_bookmarks_dialog.remove:TR:Kaldır
 
 #mkdir_dialog.description:EN:Create directory
 #mkdir_dialog.description:FR:Créer le répertoire
@@ -18706,6 +18738,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #mkdir_dialog.description:IT:Crea directory
 #mkdir_dialog.description:AR:إنشاء دليل
 #mkdir_dialog.description:NB:Opprett mappe
+#mkdir_dialog.description:TR:Dizin oluştur
 
 #mkfile_dialog.description:EN:Create new empty file
 #mkfile_dialog.description:CS:Vytvořit nový prázdný soubor
@@ -18715,6 +18748,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #mkfile_dialog.description:IT:Crea un nuovo file vuoto
 #mkfile_dialog.description:AR:إنشاء ملف جديد فارغ
 #mkfile_dialog.description:NB:Opprett ny tom fil
+#mkfile_dialog.description:TR:Yeni bir boş dosya oluştur
 
 # Used for buttons as an alternative to 'ok'
 #done:EN:Done
@@ -18730,6 +18764,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #done:CS:Hotovo
 #done:AR:Done:تم
 #done:NB:Utført
+#done:TR:Tamam
 
 #progress_dialog.hide:EN:Hide
 #progress_dialog.hide:FR:Cacher
@@ -18744,6 +18779,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #progress_dialog.hide:SL:Skrij
 #progress_dialog.hide:AR:إخفاء
 #progress_dialog.hide:NB:Skjul
+#progress_dialog.hide:TR:Gizle
 
 #move_dialog.rename_description:EN:Rename file to
 #move_dialog.rename_description:FR:Renommer en
@@ -18764,6 +18800,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #move_dialog.rename_description:SK:Premenovať súbor na
 #move_dialog.rename_description:AR:إعادة التسمية إلى
 #move_dialog.rename_description:NB:Gi nytt navn til
+#move_dialog.rename_description:TR:Dosyayı yeniden adlandır
 
 #theme_editor.shell_font:EN:Shell font
 #theme_editor.shell_font:FR:Fonte du shell
@@ -18781,6 +18818,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #theme_editor.shell_font:CS:Písmo shellu
 #theme_editor.shell_font:AR:خط الصدفة
 #theme_editor.shell_font:NB:Skrifttype for skall
+#theme_editor.shell_font:TR:Kabuk yazı tipi
 
 #theme_editor.history_font:EN:History font
 #theme_editor.history_font:FR:Fonte de l'historique
@@ -18798,6 +18836,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #theme_editor.history_font:CS:Písmo historie
 #theme_editor.history_font:AR:محفوظات الخط
 #theme_editor.history_font:NB:Skrifttype for historie
+#theme_editor.history_font:TR:Geçmiş yazı tipi
 
 #theme_editor.shell_colors:EN:Shell colors
 #theme_editor.shell_colors:en_GB:Shell colours
@@ -18819,6 +18858,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #theme_editor.shell_colors:HU:Végrehajtás színek
 #theme_editor.shell_colors:AR:ألوان الصدفة
 #theme_editor.shell_colors:NB:Farger for skall
+#theme_editor.shell_colors:TR:Kabuk renkleri
 
 #theme_editor.history_colors:EN:History colors
 #theme_editor.history_colors:en_GB:History colours
@@ -18837,6 +18877,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #theme_editor.history_colors:CS:Barvy historie
 #theme_editor.history_colors:AR:ألوان المحفوظات
 #theme_editor.history_colors:NB:Farger for historikk
+#theme_editor.history_colors:TR:Geçmiş renkleri
 
 #ToggleHiddenFiles.hide:EN:Do not show hidden files
 #ToggleHiddenFiles.hide:FR:Ne pas afficher les fichiers cachés
@@ -18852,6 +18893,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #ToggleHiddenFiles.hide:IT:Non mostrare i file nascosti
 #ToggleHiddenFiles.hide:AR:لا تظهر الملفات المخفية	 
 #ToggleHiddenFiles.hide:NB:Ikke vis skulte filer
+#ToggleHiddenFiles.hide:TR:Gizli dosyaları gösterme
 
 #auth_dialog.error_was:EN:Error was: %1
 #auth_dialog.error_was:FR:L'erreur était: %1
@@ -18875,6 +18917,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #auth_dialog.error_was:DA:Fejlen var: %1
 #auth_dialog.error_was:AR:الخطأ كان: %1
 #auth_dialog.error_was:NB:Feilen var: %1
+#auth_dialog.error_was:TR:Hata: %1
 
 #table.hide_column:EN:Hide column
 #table.hide_column:FR:Cacher la colonne
@@ -18899,6 +18942,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #table.hide_column:UA:Сховати колонку
 #table.hide_column:AR:إخفاء عمود
 #table.hide_column:NB:Skjul kolonne
+#table.hide_column:TR:Sütun gizle
 
 #delete.symlink_warning_title:EN:Symlink found
 #delete.symlink_warning_title:FR:Lien symbolique
@@ -18923,6 +18967,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #delete.symlink_warning_title:UA:Знайдено символьне посилання
 #delete.symlink_warning_title:AR:تم العثور على وصلة رمزية
 #delete.symlink_warning_title:NB:Symbolsk lenke funnet
+#delete.symlink_warning_title:TR:Sembolik bağlantı bulundu
 
 #delete.symlink_warning:EN:This file looks like a symbolic link:\n\n  File: %1\n  Links to: %2\n\nDelete symlink only or\nFollow symlink and delete folder (CAUTION) ?
 #delete.symlink_warning:FR:Ce fichier a l'air d'être un lien symbolique:\n\n  Fichier: %1\n  Pointe vers: %2\n\nSupprimer le lien seulement ou\nSuivre le lien symbolique et supprimer le répertoire (ATTENTION) ?
@@ -18947,6 +18992,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #delete.symlink_warning:UA:Даний файл є символьним посиланням:\n\n Файл: %1 посилається на: %2\n\nВидалити тільки символьне посилання чи\n\nПерейти за посиланням і видалити папку (УВАГА) ?
 #delete.symlink_warning:AR:هذا الملف يبدو وكأنه وصلة رمزية:\n\n  الملف: %1\n  مرتبط بـ: %2\n\nحذف الوصلة فقط أم\nتتبع الوصلة وحذف المجلد (تحذير)؟
 #delete.symlink_warning:NB:Denne filen ser ut til å være en symbolsk lenke:\n\n  Fil: %1\n  Lenker til: %2\n\nDelete symlink only or\nFølg symbolsk lenke og slett mappen(FORSIKTIG) ?
+#delete.symlink_warning:TR:Bu dosya bir sembolik bağlantı gibi görünüyor:\n\n  Dosya: %1\n  Bağlı bulunduğu: %2\n\nSadece sembolik bağlantıyı sil veya\nSembolik bağlantıyı içeren klasörü sil (DİKKAT) ?
 
 #delete.delete_link_only:EN:Delete link
 #delete.delete_link_only:FR:Supprimer le lien
@@ -18971,6 +19017,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #delete.delete_link_only:UA:Видалити посилання
 #delete.delete_link_only:AR:حذف الوصلة
 #delete.delete_link_only:NB:Slett lenke
+#delete.delete_link_only:TR:Bağlantıyı sil
 
 #delete.delete_linked_folder:EN:Delete folder
 #delete.delete_linked_folder:FR:Supprimer le répertoire
@@ -18995,6 +19042,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #delete.delete_linked_folder:UA:Видалати папку
 #delete.delete_linked_folder:AR:حذف المجلد
 #delete.delete_linked_folder:NB:Slett mappe
+#delete.delete_linked_folder:TR:Klasörü sil
 
 #Unpack.label:EN:Unpack files
 #Unpack.label:FR:Décompresser fichiers
@@ -19019,6 +19067,7 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #Unpack.label:UA:Розпакувати файли
 #Unpack.label:AR:استخراج الملفات
 #Unpack.label:NB:Pakk ut filer
+#Unpack.label:TR:Arşiv dosyalarını aç
 
 #Pack.label:EN:Pack files
 #Pack.label:FR:Compresser fichiers
@@ -19043,3 +19092,4 @@ tabs_quick_list.empty_message:EN:Only one tab is presented
 #Pack.label:UA:Стиснути файли
 #Pack.label:AR:أرشفة الملفات
 #Pack.label:NB:Pakk filer
+#Pack.label:TR:Dosyaları arşivle

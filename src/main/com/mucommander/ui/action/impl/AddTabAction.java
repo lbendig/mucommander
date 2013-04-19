@@ -18,11 +18,12 @@
 
 package com.mucommander.ui.action.impl;
 
+import java.awt.event.KeyEvent;
 import java.util.Map;
 
 import javax.swing.KeyStroke;
 
-import com.mucommander.commons.file.AbstractFile;
+import com.mucommander.commons.file.impl.local.LocalFile;
 import com.mucommander.ui.action.AbstractActionDescriptor;
 import com.mucommander.ui.action.ActionCategories;
 import com.mucommander.ui.action.ActionCategory;
@@ -32,36 +33,36 @@ import com.mucommander.ui.action.MuAction;
 import com.mucommander.ui.main.MainFrame;
 
 /**
- * Add a new tab in the other panel with the same location as the one presented in the currently selected tab
- * 
+ * This action adds a new tab in the active panel with the location
+ * that is currently presented in the active tab.
+ *
  * @author Arik Hadas
  */
-public class CloneTabToOtherPanelAction extends MuAction {
+public class AddTabAction extends MuAction {
 
-    public CloneTabToOtherPanelAction(MainFrame mainFrame, Map<String,Object> properties) {
+	public AddTabAction(MainFrame mainFrame, Map<String,Object> properties) {
         super(mainFrame, properties);
     }
 
-    @Override
-    public void performAction() {
-    	AbstractFile currentLocation = mainFrame.getActivePanel().getCurrentFolder();
-    	mainFrame.getInactivePanel().getTabs().add(currentLocation);
-    }
+	@Override
+	public void performAction() {
+		mainFrame.getActivePanel().getTabs().add(LocalFile.getUserHome());
+	}
 
 	@Override
 	public ActionDescriptor getDescriptor() {
 		return new Descriptor();
 	}
 
-    public static class Factory implements ActionFactory {
+	public static class Factory implements ActionFactory {
 
 		public MuAction createAction(MainFrame mainFrame, Map<String,Object> properties) {
-			return new CloneTabToOtherPanelAction(mainFrame, properties);
+			return new AddTabAction(mainFrame, properties);
 		}
     }
-    
-    public static class Descriptor extends AbstractActionDescriptor {
-    	public static final String ACTION_ID = "CloneTabToOtherPanel";
+
+	public static class Descriptor extends AbstractActionDescriptor {
+    	public static final String ACTION_ID = "AddTab";
     	
 		public String getId() { return ACTION_ID; }
 
@@ -69,7 +70,6 @@ public class CloneTabToOtherPanelAction extends MuAction {
 
 		public KeyStroke getDefaultAltKeyStroke() { return null; }
 
-		public KeyStroke getDefaultKeyStroke() { return null; }
+		public KeyStroke getDefaultKeyStroke() { return KeyStroke.getKeyStroke(KeyEvent.VK_T, KeyEvent.SHIFT_DOWN_MASK | KeyEvent.CTRL_DOWN_MASK); }
     }
 }
-

@@ -20,6 +20,8 @@ package com.mucommander.ui.action.impl;
 
 import java.util.Map;
 
+import javax.swing.KeyStroke;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,6 +32,11 @@ import com.mucommander.commons.file.util.FileSet;
 import com.mucommander.job.TempOpenWithJob;
 import com.mucommander.process.ProcessRunner;
 import com.mucommander.text.Translator;
+import com.mucommander.ui.action.AbstractActionDescriptor;
+import com.mucommander.ui.action.ActionCategories;
+import com.mucommander.ui.action.ActionCategory;
+import com.mucommander.ui.action.ActionDescriptor;
+import com.mucommander.ui.action.ActionFactory;
 import com.mucommander.ui.action.MuAction;
 import com.mucommander.ui.dialog.InformationDialog;
 import com.mucommander.ui.dialog.file.ProgressDialog;
@@ -91,5 +98,45 @@ public class CommandAction extends MuAction {
             ProgressDialog progressDialog = new ProgressDialog(mainFrame, Translator.get("copy_dialog.copying"));
             progressDialog.start(new TempOpenWithJob(new ProgressDialog(mainFrame, Translator.get("copy_dialog.copying")), mainFrame, selectedFiles, command));
         }
+    }
+
+    @Override
+	public ActionDescriptor getDescriptor() {
+		return new Descriptor(command);
+	}
+
+    public static class Factory implements ActionFactory {
+    	private Command command;
+
+    	public Factory(Command command) {
+    		this.command = command;
+    	}
+
+    	public MuAction createAction(MainFrame mainFrame, Map<String,Object> properties) {
+    		return new CommandAction(mainFrame, properties, command);
+    	}
+    }
+
+    public static class Descriptor extends AbstractActionDescriptor {
+    	private static final String ACTION_ID_PREFIX = "OpenWith_";
+    	private String ACTION_ID;
+    	private String label;
+
+    	public Descriptor(Command command) {
+    		ACTION_ID = ACTION_ID_PREFIX + command.getAlias();
+    		label = String.format("%s %s", 
+    				Translator.get("file_menu.open_with"),
+    				command.getDisplayName());
+    	}
+
+    	public String getId() { return ACTION_ID; }
+
+    	public String getLabel() { return label; }
+
+    	public ActionCategory getCategory() { return ActionCategories.COMMANDS; }
+
+    	public KeyStroke getDefaultAltKeyStroke() { return null; }
+
+    	public KeyStroke getDefaultKeyStroke() { return null; }
     }
 }
