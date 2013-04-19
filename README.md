@@ -14,7 +14,7 @@ application startup. If such a dependency is not provided, the application start
 
 Provide the location of Hadoop dependencies via the **--hadoop** command line option.
 
-    java -jar mucommander-xxx.jar --help
+    java -jar mucommander-hadoop-qfs.jar --help
     ...
     --hadoop FILE/FOLDER  HDFS Protocol support: location of Hadoop jar(s) : FILE(core-jar) or FOLDER(as of 0.21)
 
@@ -58,7 +58,7 @@ Access to the QFS C++ libraries is done via the [qfs-access](https://github.com/
 Make sure that the location of the compiled QFS binaries (../qfs/build/release/bin) is in the `LD_LIBRARY_PATH`.
 Also provide the location of qfs-access.jar via the **--qfs** command line option:
 
-    java -jar mucommander-xxx.jar --help
+    java -jar mucommander-hadoop-qfs.jar --help
     ...
     --qfs FILE  QFS Protocol support: location of qfs-access.jar
 
@@ -77,17 +77,19 @@ Also provide the location of qfs-access.jar via the **--qfs** command line optio
     cp build_template.properties build.properties
     ant jar
 
-The runnable mucommander-xxx.jar  will be created under `mucommander/tmp`
+The runnable mucommander-hadoop-qfs.jar  will be created under `mucommander/tmp`
 
 ## Examples
 
-    java -jar mucommander-xxx.jar --hadoop /home/user/hadoop/hadoop-1.0.0/hadoop-core-1.0.0.jar
-    java -jar mucommander-xxx.jar --hadoop /home/user/hadoop/hadoop-2.0.0-cdh4.1.2
+    java -jar mucommander-hadoop-qfs.jar --hadoop /home/user/hadoop/hadoop-1.0.0/hadoop-core-1.0.0.jar
+    java -jar mucommander-hadoop-qfs.jar --hadoop /home/user/hadoop/hadoop-2.0.0-cdh4.1.2
 
     export LD_LIBRARY_PATH=/home/user/code/qfs/build/release/lib; \
-    java -jar mucommander-xxx.jar --hadoop /home/user/hadoop/hadoop-2.0.0-cdh4.1.2 \
+    java -jar mucommander-hadoop-qfs.jar --hadoop /home/user/hadoop/hadoop-2.0.0-cdh4.1.2 \
     --qfs /home/user/qfs/build/java/qfs-access/qfs-access-1.0.1.jar
 
+## Binary distribution
+[mucommander-hadoop-qfs.jar](https://docs.google.com/file/d/0B-nInduBOs0cU052cGllLVJwVFE/edit?usp=sharing)
 
 ## Misc
 
