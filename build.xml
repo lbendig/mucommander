@@ -34,7 +34,7 @@
     <!-- Where to store temporary files.                                                                             -->
     <property name="tmp"                  location="tmp"/>
     <property name="tmp.deb"              location="${tmp}/deb"/>
-    <property name="jar.normal"           location="${tmp}/mucommander-normal.jar"/>
+    <property name="jar.normal"           location="${tmp}/mucommander-hadoop-qfs.jar"/>
     <property name="jar.obf"              location="${tmp}/mucommander-obf.jar"/>
     <property name="tmp.nsis"             location="${tmp}/nsis"/>
     <property name="tmp.portable"         location="${tmp}/portable"/>
