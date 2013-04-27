@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 
 import com.mucommander.commons.file.AbstractFile;
 import com.mucommander.ui.dialog.DialogToolkit;
+import com.mucommander.ui.dialog.InformationDialog;
 import com.mucommander.ui.helper.FocusRequester;
 import com.mucommander.ui.layout.AsyncPanel;
 import com.mucommander.ui.main.MainFrame;
@@ -102,13 +103,13 @@ public abstract class FileFrame extends JFrame {
         setContentPane(contentPane);
 
         setSize(WAIT_DIALOG_SIZE);
-        DialogToolkit.centerOnWindow(this, getMainFrame());
+        DialogToolkit.centerOnWindow(this, mainFrame);
 
         setVisible(true);
     }
 
-	protected MainFrame getMainFrame() {
-		return mainFrame;
+	private void showGenericErrorDialog() {
+		InformationDialog.showErrorDialog(mainFrame, getGenericErrorDialogTitle(), getGenericErrorDialogMessage());
 	}
 
 	/**
@@ -134,25 +135,23 @@ public abstract class FileFrame extends JFrame {
 
     @Override
     public void pack() {
-        super.pack();
+    	if (!isFullScreen()) {
+    		super.pack();
 
-        DialogToolkit.fitToScreen(this);
-        DialogToolkit.fitToMinDimension(this, getMinimumSize());
+    		DialogToolkit.fitToScreen(this);
+    		DialogToolkit.fitToMinDimension(this, getMinimumSize());
 
-        DialogToolkit.centerOnWindow(this, getMainFrame());
-    }
-    
-    @Override
-    public void dispose() {
-    	filePresenter.beforeCloseHook();
-    	super.dispose();
+    		DialogToolkit.centerOnWindow(this, mainFrame);
+    	}
     }
     
     //////////////////////
     // Abstract methods //
     //////////////////////
     
-    protected abstract void showGenericErrorDialog();
+    protected abstract String getGenericErrorDialogTitle();
+
+    protected abstract String getGenericErrorDialogMessage();
     
     protected abstract FilePresenter createFilePresenter(AbstractFile file) throws UserCancelledException;
 }

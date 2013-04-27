@@ -18,12 +18,12 @@
 
 package com.mucommander.ui.viewer;
 
+import java.awt.Dimension;
+import java.awt.Image;
+
 import com.mucommander.commons.file.AbstractFile;
 import com.mucommander.text.Translator;
-import com.mucommander.ui.dialog.InformationDialog;
 import com.mucommander.ui.main.MainFrame;
-
-import java.awt.*;
 
 
 /**
@@ -64,12 +64,17 @@ public class EditorFrame extends FileFrame {
     }
     
     @Override
-    protected void showGenericErrorDialog() {
-        InformationDialog.showErrorDialog(getMainFrame(), Translator.get("file_editor.edit_error_title"), Translator.get("file_editor.edit_error"));
-    }
-    
-    @Override
 	protected FilePresenter createFilePresenter(AbstractFile file) throws UserCancelledException {
 		return editor = EditorRegistrar.createFileEditor(file, EditorFrame.this);
 	}
+
+    @Override
+    protected String getGenericErrorDialogTitle() {
+    	return Translator.get("file_editor.edit_error_title");
+    }
+
+    @Override
+    protected String getGenericErrorDialogMessage() {
+    	return Translator.get("file_editor.edit_error");
+    }
 }

@@ -33,6 +33,7 @@ import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.BadLocationException;
+import javax.swing.text.DefaultEditorKit;
 import javax.swing.text.Document;
 
 import com.mucommander.ui.theme.ColorChangedEvent;
@@ -51,8 +52,11 @@ class TextEditorImpl implements ThemeListener {
 	private String searchString;
 
 	private JFrame frame;
+
 	private JTextArea textArea;
 
+	/** Indicates whether there is a line separator in the original file */
+	private boolean lineSeparatorExists;
 
 	////////////////////
 	// Initialization //
@@ -213,12 +217,20 @@ class TextEditorImpl implements ThemeListener {
 		// Feed the file's contents to text area
 		textArea.read(reader, null);
 
+		// If there are more than one lines, there is a line separator
+		lineSeparatorExists = textArea.getLineCount() > 1;
+
 		// Move cursor to the top
 		textArea.setCaretPosition(0);
 	}
 
 	void write(Writer writer) throws IOException {
 		Document document = textArea.getDocument();
+
+		// According to the documentation in DefaultEditorKit, the line separator is set to be as the system property
+		// if no other line separator exists in the file, but in practice it is not, so this is a workaround for it
+		if (!lineSeparatorExists)
+			document.putProperty(DefaultEditorKit.EndOfLineStringProperty, System.getProperty("line.separator"));
 
 		try {
 			textArea.getUI().getEditorKit(textArea).write(new BufferedWriter(writer), document, 0, document.getLength());
