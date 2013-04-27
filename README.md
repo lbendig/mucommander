@@ -89,7 +89,7 @@ The runnable mucommander-hadoop-qfs.jar  will be created under `mucommander/tmp`
     --qfs /home/user/qfs/build/java/qfs-access/qfs-access-1.0.1.jar
 
 ## Binary distribution
-[mucommander-hadoop-qfs.jar](https://docs.google.com/file/d/0B-nInduBOs0cU052cGllLVJwVFE/edit?usp=sharing)
+[mucommander-hadoop-qfs.jar](https://docs.google.com/file/d/0B-nInduBOs0cYkZ0aVdrcWkxSnM/edit?usp=sharing)
 
 ## Misc
 
