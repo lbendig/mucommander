@@ -174,6 +174,7 @@ public class ServerConnectDialog extends FocusDialog implements ActionListener, 
         northPanel.setEnabled(false);
         tabbedPane.addTab(protocol.toUpperCase(), northPanel);
         tabbedPane.setEnabledAt((tabbedPane.getTabCount() - 1), false);
+        serverPanels.add(null);
     }
 
     protected void updateURLLabel() {
