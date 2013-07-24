@@ -21,7 +21,8 @@ Provide the location of Hadoop dependencies via the **--hadoop** command line op
 Note, that as of Hadoop 0.21 the hadoop-core has been split into three subprojects (Common, HDFS, MapReduce), pass
 the directory path in this case.
 
-muCommander has been tested with the following Hadoop versions:
+muCommander works with any* Hadoop vesions.<br>
+\* Tested on:
 
     hadoop-0.20.0
     hadoop-0.20.1
@@ -49,6 +50,12 @@ muCommander has been tested with the following Hadoop versions:
     hadoop-0.23.6
     hadoop-2.0.3-alpha
     hadoop-1.1.2
+    hadoop-0.23.7 
+    hadoop-2.0.4-alpha
+    hadoop-1.2.0
+    hadoop-0.23.8
+    hadoop-2.0.5-alpha
+    hadoop-0.23.9
 
     Cloudera releases: 0.20, 0.23 and 2.0.0
 
