@@ -56,6 +56,14 @@ muCommander works with any* Hadoop vesions.<br>
     hadoop-0.23.8
     hadoop-2.0.5-alpha
     hadoop-0.23.9
+    hadoop-1.2.1
+    hadoop-2.0.6-alpha
+    hadoop-2.1.0-beta
+    hadoop-2.1.1-beta
+    hadoop-2.2.0
+    hadoop-0.23.10
+    hadoop-2.3.0
+    hadoop-2.4.0
 
     Cloudera releases: 0.20, 0.23 and 2.0.0
 
